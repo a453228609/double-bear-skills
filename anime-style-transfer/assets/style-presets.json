@@ -1,0 +1,309 @@
+{
+  "version": "1.0.0",
+  "note": "动漫风格转换预设库。keywords 为英文视觉特征词（跨模型通用），artist_hint 为可选艺术家风格引用（需显式 --artist 开启）。",
+  "presets": [
+    {
+      "id": "japanese-tv-cel",
+      "name_zh": "日系 TV 赛璐璐",
+      "name_en": "Japanese TV Cel Animation",
+      "summary": "90-2000 年代日本电视动画质感：平涂色块 + 硬边阴影 + 细线稿，色彩饱和。",
+      "keywords": [
+        "anime style",
+        "cel shading",
+        "flat color blocks",
+        "hard-edged shadows",
+        "thin clean lineart",
+        "saturated tv anime palette",
+        "official anime key visual"
+      ],
+      "subject_hint": "人物、校园、日常场景、角色立绘",
+      "avoid_for": "写实风景、产品图、需要保留照片质感的场景",
+      "fidelity": "medium-high",
+      "fidelity_reason": "赛璐璐靠色块重构，需要保留原图的构图与主体轮廓；fidelity 过低会连姿势一起重画。",
+      "negative_extra": ["painterly brush strokes", "3d render", "photorealistic skin"]
+    },
+    {
+      "id": "luminous-cinematic",
+      "name_zh": "电影级透亮光影",
+      "name_en": "Luminous Cinematic Anime",
+      "summary": "强调天光、云层体积光与大气透视的高透亮动画质感，逆光氛围拉满。",
+      "keywords": [
+        "luminous atmospheric lighting",
+        "god rays through clouds",
+        "volumetric sunlight",
+        "soft bloom",
+        "gradient sunset sky",
+        "deep atmospheric perspective",
+        "detailed painterly clouds"
+      ],
+      "artist_hint": "Makoto Shinkai inspired",
+      "subject_hint": "风景、天空、城市远景、逆光少女、青春场景",
+      "avoid_for": "室内特写、需要干净纯色背景的用途",
+      "fidelity": "medium",
+      "fidelity_reason": "光影是这类风格的主角，构图需守住但颜色与影调要放开，medium 平衡二者。",
+      "negative_extra": ["flat cel shading", "harsh flash photography", "dull overcast light"]
+    },
+    {
+      "id": "ghibli-watercolor",
+      "name_zh": "手绘水彩动画",
+      "name_en": "Hand-Painted Watercolor Animation",
+      "summary": "柔和水彩背景、温暖低饱和色调、温柔线稿，田园与日常感强。",
+      "keywords": [
+        "hand-painted animation",
+        "watercolor background wash",
+        "soft muted warm palette",
+        "gentle rounded lineart",
+        "pastel highlights",
+        "storybook atmosphere",
+        "ghibli-inspired"
+      ],
+      "subject_hint": "乡野、田园、食物、日常琐事、温柔叙事画面",
+      "avoid_for": "动作场面、科技与都市夜景",
+      "fidelity": "medium-high",
+      "fidelity_reason": "手绘感来自线条与笔触，fidelity 高一点可保留原图角色特征。",
+      "negative_extra": ["harsh neon colors", "hard cel shadows", "3d render"]
+    },
+    {
+      "id": "retro-90s-ova",
+      "name_zh": "90 年代 OVA 复古",
+      "name_en": "Retro 90s OVA Cel",
+      "summary": "录像带年代感：有限色板、模拟柔化、颗粒噪点与轻微色偏。",
+      "keywords": [
+        "1990s retro anime cel",
+        "limited retro color palette",
+        "analog video softness",
+        "subtle film grain",
+        "slight color bleed",
+        "vhs era look",
+        "aged print texture"
+      ],
+      "subject_hint": "复古人物、怀旧场景、90 年代氛围图",
+      "avoid_for": "高清商业出图、印刷级成品",
+      "fidelity": "medium",
+      "fidelity_reason": "复古主要靠色调与颗粒，构图要守，色调要放开。",
+      "negative_extra": ["modern crisp digital art", "hdr clarity", "8k sharp"]
+    },
+    {
+      "id": "shonen-manga-bw",
+      "name_zh": "黑白日漫网点",
+      "name_en": "Black & White Shonen Manga",
+      "summary": "墨线 + 网点纸的黑白漫画质感，去除所有彩色。",
+      "keywords": [
+        "black and white manga panel",
+        "bold ink lineart",
+        "screentone shading",
+        "hatching",
+        "high contrast monochrome",
+        "manga illustration",
+        "speed lines"
+      ],
+      "subject_hint": "人物特写、动作场面、对白分镜、漫画分格草稿",
+      "avoid_for": "彩色插画、风景明信片",
+      "fidelity": "high",
+      "fidelity_reason": "漫画靠线稿，fidelity 高可让墨线贴合原图轮廓，避免结构被重画。",
+      "negative_extra": ["color", "colorful gradients", "soft shading"]
+    },
+    {
+      "id": "american-cartoon-cel",
+      "name_zh": "美式卡通厚线稿",
+      "name_en": "American Cartoon Cel",
+      "summary": "粗黑描边、夸张头身比、活泼配色的欧美电视动画感。",
+      "keywords": [
+        "bold black outlines",
+        "exaggerated cartoon proportions",
+        "flat vibrant color blocks",
+        "expressive squash and stretch",
+        "western cartoon animation",
+        "confident rounded shapes"
+      ],
+      "subject_hint": "Q 版化、宠物、搞笑表情、角色形象",
+      "avoid_for": "写实人物、需要精确还原五官的证件照",
+      "fidelity": "low-medium",
+      "fidelity_reason": "美式卡通靠比例重塑，fidelity 低一点才能做出夸张化改造。",
+      "negative_extra": ["japanese anime face", "photorealistic proportions", "soft lineart"]
+    },
+    {
+      "id": "cgi-animation",
+      "name_zh": "3D 动画电影渲染",
+      "name_en": "3D CGI Animation Render",
+      "summary": "皮克斯式 3D 渲染：次表面散射皮肤、全局柔光、圆润造型。",
+      "keywords": [
+        "3d cgi animation render",
+        "subsurface scattering skin",
+        "soft global illumination",
+        "ray traced soft shadows",
+        "stylized rounded character design",
+        "family animation feature look",
+        "high detail fur and hair strands"
+      ],
+      "subject_hint": "人物、动物、物品拟人化、3D 玩偶感",
+      "avoid_for": "平面二次元、漫画风",
+      "fidelity": "medium",
+      "fidelity_reason": "3D 需要重建体积信息，构图要守，材质细节要放开。",
+      "negative_extra": ["2d lineart", "flat cel shading", "manga screentone"]
+    },
+    {
+      "id": "flat-moe",
+      "name_zh": "扁平二次元插画",
+      "name_en": "Flat Modern Anime Illustration",
+      "summary": "干净平涂 + 极简阴影的现代插画风，适合头像与社媒图。",
+      "keywords": [
+        "modern flat anime illustration",
+        "clean minimal shading",
+        "smooth gradient skin",
+        "bright clean colors",
+        "large expressive eyes",
+        "crisp vector-like edges",
+        "contemporary character art"
+      ],
+      "subject_hint": "头像、表情包、Q 版头像、社媒配图、公众号插图",
+      "avoid_for": "写实照片转绘、强透视场景",
+      "fidelity": "high",
+      "fidelity_reason": "扁平风重在干净与还原，人物必须认得出是同一个人。",
+      "negative_extra": ["painterly texture", "grain", "film scratches"]
+    },
+    {
+      "id": "painterly-anime",
+      "name_zh": "厚涂半写实动漫",
+      "name_en": "Painterly Semi-Realistic Anime",
+      "summary": "介于二次元与写实之间的厚涂质感，皮肤有笔触与柔和明暗。",
+      "keywords": [
+        "painterly semi-realistic anime illustration",
+        "soft blended brush strokes",
+        "detailed facial rendering",
+        "realistic proportions with anime features",
+        "cinematic color grading",
+        "concept art quality"
+      ],
+      "subject_hint": "人物半身像、角色设定图、概念稿",
+      "avoid_for": "纯平涂、可爱 Q 版",
+      "fidelity": "medium-high",
+      "fidelity_reason": "厚涂保留体积与五官，fidelity 偏高能锁住脸型。",
+      "negative_extra": ["flat vector shading", "chibi", "photorealistic photo"]
+    },
+    {
+      "id": "game-character-art",
+      "name_zh": "二次元手游立绘",
+      "name_en": "Anime Game Character Splash Art",
+      "summary": "商业手游立绘：精致服装细节、动态姿态、戏剧性光效与氛围背景。",
+      "keywords": [
+        "anime game splash art",
+        "intricate costume detail",
+        "dynamic dramatic pose",
+        "volumetric lighting effects",
+        "detailed cel shading",
+        "premium character key art"
+      ],
+      "subject_hint": "角色立绘、卡面、游戏宣传图",
+      "avoid_for": "简单头像、写实场景照",
+      "fidelity": "medium",
+      "fidelity_reason": "立绘会重绘姿态与细节，medium 让风格主导、主体可辨。",
+      "negative_extra": ["plain white background", "flat snapshot", "amateur drawing"]
+    },
+    {
+      "id": "watercolor-illustration",
+      "name_zh": "水彩插画",
+      "name_en": "Watercolor Illustration",
+      "summary": "纸纹水彩：边缘晕染、颜料沉淀、半透明叠色，非动漫但同属插画赛道。",
+      "keywords": [
+        "watercolor painting illustration",
+        "paper texture",
+        "soft bleeding edges",
+        "pigment granulation",
+        "translucent color layering",
+        "wet on wet washes",
+        "traditional media look"
+      ],
+      "subject_hint": "植物、静物、旅行手账、贺图",
+      "avoid_for": "人物精确还原、需要清晰线稿的用途",
+      "fidelity": "medium-high",
+      "fidelity_reason": "水彩靠形体印象，构图与主体位置要守。",
+      "negative_extra": ["digital airbrush gradients", "hard outlines", "3d render"]
+    },
+    {
+      "id": "pixel-art",
+      "name_zh": "像素点阵",
+      "name_en": "Pixel Art",
+      "summary": "低分辨率像素画：有限调色板、硬边像素簇、复古游戏画面感。",
+      "keywords": [
+        "pixel art",
+        "limited color palette",
+        "visible pixel grid",
+        "16 bit game sprite aesthetic",
+        "hard aliased edges",
+        "retro game screenshot"
+      ],
+      "subject_hint": "头像图标、小人、游戏角色、表情",
+      "avoid_for": "复杂写实场景、细腻面部",
+      "fidelity": "medium",
+      "fidelity_reason": "像素化本身会简化细节，medium 让模型重建出干净形状。",
+      "negative_extra": ["smooth gradients", "high resolution detail", "photorealism"]
+    },
+    {
+      "id": "ink-lineart",
+      "name_zh": "墨线线稿",
+      "name_en": "Clean Ink Line Art",
+      "summary": "纯黑白线稿，不上色，适合作为上色底稿或再创作素材。",
+      "keywords": [
+        "clean ink lineart",
+        "monochrome contour drawing",
+        "no fill no shading",
+        "even line weight",
+        "white background",
+        "illustration sketch"
+      ],
+      "subject_hint": "线稿底稿、素材再创作、临摹参考",
+      "avoid_for": "最终成品展示（除非用户就是要线稿）",
+      "fidelity": "high",
+      "fidelity_reason": "线稿完全依赖原图轮廓，fidelity 必须高。",
+      "negative_extra": ["color", "fill", "shading", "texture"]
+    },
+    {
+      "id": "claymation-cute",
+      "name_zh": "黏土定格",
+      "name_en": "Claymation Stop Motion",
+      "summary": "黏土材质定格动画：手捏纹理、圆润体块、微缩布景感。",
+      "keywords": [
+        "claymation stop motion",
+        "hand sculpted clay texture",
+        "rounded chunky forms",
+        "fingerprint surface detail",
+        "miniature diorama set",
+        "soft studio lighting"
+      ],
+      "subject_hint": "摆拍公仔、萌化头像、手办感",
+      "avoid_for": "严肃写实、需要清晰五官还原的用途",
+      "fidelity": "low-medium",
+      "fidelity_reason": "黏土风要重塑体积，fidelity 低才能脱离照片质感。",
+      "negative_extra": ["photorealistic", "sharp digital lineart", "flat cel shading"]
+    }
+  ],
+  "global_negative": [
+    "watermark",
+    "signature",
+    "logo",
+    "text",
+    "subtitles",
+    "photorealistic photo",
+    "low resolution",
+    "blurry",
+    "jpeg artifacts",
+    "extra fingers",
+    "deformed hands",
+    "distorted face",
+    "mutated anatomy",
+    "cross-eyed",
+    "poorly drawn face",
+    "duplicate subject"
+  ],
+  "size_rules": {
+    "square": "1024x1024",
+    "portrait": "1024x1536",
+    "landscape": "1536x1024"
+  },
+  "fidelity_levels": {
+    "high": "严格保留原图构图、姿态、五官与背景元素，只做风格化换皮。适合人像、需认人的场景。",
+    "medium": "保留构图与主体特征，允许重绘姿态细节、光影与部分背景。多数风格默认档位。",
+    "low": "大幅重构，只保留大致轮廓与主体识别度。适合夸张化、Q 版、材质重构类风格。"
+  }
+}
